@@ -1,0 +1,77 @@
+.todolist {
+    padding: 40px 20px;
+}
+
+.layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    height: 100vh;
+}
+
+.title {
+    margin-bottom: 0;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(#1c1c1c, .4);
+}
+
+.panel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 0, 0, 0.5);
+    gap: 10px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.item.success {
+    background-color: rgba(#2fff00, 0.5);
+}
+
+.task {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.delete {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    fill: #ffffff;
+}
+
+
+
+
