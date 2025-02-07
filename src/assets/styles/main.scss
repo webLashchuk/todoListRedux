@@ -1,0 +1,25 @@
+@import "./reset.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+@import "./global.scss";
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+@keyframes bg {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: $bgWidth;
+    }
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}

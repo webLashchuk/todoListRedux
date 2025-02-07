@@ -1,3 +1,5 @@
+@import "../../assets/styles/mixins.scss";
+
 .todolist {
     padding: 40px 20px;
 }
@@ -7,7 +9,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    height: 100vh;
+    height: calc(100vh - 80px);
 }
 
 .title {
@@ -26,15 +28,15 @@
 }
 
 .panel {
-    display: flex;
-    align-items: center;
+    @include flex-center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .item {
-    display: flex;
-    align-items: center;
+    @include flex-center;
     background-color: rgba(255, 0, 0, 0.5);
+    flex-wrap: wrap;
     gap: 10px;
     border-radius: 8px;
     padding: 10px 20px;
@@ -43,9 +45,8 @@
 }
 
 .list {
-    display: flex;
+    @include flex-center;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
 }
 
@@ -57,19 +58,7 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 5px;
-}
-
-.delete {
-    position: relative;
-    width: 20px;
-    height: 20px;
-}
-
-.icon {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    fill: #ffffff;
+    word-wrap: break-word;
 }
 
 

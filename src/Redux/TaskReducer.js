@@ -8,18 +8,29 @@ const initialState = {
     newTaskText: ""
 };
 
+const generateUniqueId = (tasks) => {
+    const allId = tasks.map(task => task.id);
+    let newId = tasks.length + 1;
+
+    while (allId.includes(newId)) {
+        newId++;
+    }
+
+    return newId;
+};
+
 const taskReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TASK:
-            if (!state.newTaskText.trim()) return state; 
+            if (!state.newTaskText.trim()) return state;
             return {
                 ...state,
                 tasks: [...state.tasks, {
-                    id: state.tasks.length + 1,
+                    id: generateUniqueId(state.tasks),
                     title: state.newTaskText,
                     isDone: false
                 }],
-                newTaskText: "" 
+                newTaskText: ""
             };
         case UPDATE_NEW_TASK:
             return {
@@ -43,10 +54,20 @@ const taskReducer = (state = initialState, action) => {
     }
 };
 
-// Экшн-криейторы
-export const addTaskActionCreator = () => ({ type: ADD_TASK });
-export const updateNewTaskTextActionCreator = (text) => ({ type: UPDATE_NEW_TASK, newText: text });
-export const toggleTaskActionCreator = (id) => ({ type: TOGGLE_TASK, taskId: id });
-export const removeTaskActionCreator = (id) => ({ type: REMOVE_TASK, taskId: id });
+export const addTaskActionCreator = () => ({
+    type: ADD_TASK
+});
+export const updateNewTaskTextActionCreator = (text) => ({
+    type: UPDATE_NEW_TASK,
+    newText: text
+});
+export const toggleTaskActionCreator = (id) => ({
+    type: TOGGLE_TASK,
+    taskId: id
+});
+export const removeTaskActionCreator = (id) => ({
+    type: REMOVE_TASK,
+    taskId: id
+});
 
 export default taskReducer;
